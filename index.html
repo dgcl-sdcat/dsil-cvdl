@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/DpartementsCnetreValdeLoire_1.js"></script>
+        <script src="data/RgionCentreValdeLoire_2.js"></script>
+        <script src="data/HorsthmatiqueDSILexceptionnelle_3.js"></script>
+        <script src="data/Transitioncologique_4.js"></script>
+        <script src="data/Prservationdupatrimoine_5.js"></script>
+        <script src="data/Rsiliencesanitaire_6.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[46.23268426114437,-0.4965631522818342],[48.99149545517415,4.785862885351078]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_FonddecarteOSM_0');
+        map.getPane('pane_FonddecarteOSM_0').style.zIndex = 400;
+        var layer_FonddecarteOSM_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_FonddecarteOSM_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_FonddecarteOSM_0;
+        map.addLayer(layer_FonddecarteOSM_0);
+        function pop_DpartementsCnetreValdeLoire_1(feature, layer) {
+        }
+
+        function style_DpartementsCnetreValdeLoire_1_0() {
+            return {
+                pane: 'pane_DpartementsCnetreValdeLoire_1',
+                opacity: 1,
+                color: 'rgba(195,134,212,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,178,151,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_DpartementsCnetreValdeLoire_1');
+        map.getPane('pane_DpartementsCnetreValdeLoire_1').style.zIndex = 401;
+        map.getPane('pane_DpartementsCnetreValdeLoire_1').style['mix-blend-mode'] = 'normal';
+        var layer_DpartementsCnetreValdeLoire_1 = new L.geoJson(json_DpartementsCnetreValdeLoire_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_DpartementsCnetreValdeLoire_1',
+            layerName: 'layer_DpartementsCnetreValdeLoire_1',
+            pane: 'pane_DpartementsCnetreValdeLoire_1',
+            onEachFeature: pop_DpartementsCnetreValdeLoire_1,
+            style: style_DpartementsCnetreValdeLoire_1_0,
+        });
+        bounds_group.addLayer(layer_DpartementsCnetreValdeLoire_1);
+        map.addLayer(layer_DpartementsCnetreValdeLoire_1);
+        function pop_RgionCentreValdeLoire_2(feature, layer) {
+        }
+
+        function style_RgionCentreValdeLoire_2_0() {
+            return {
+                pane: 'pane_RgionCentreValdeLoire_2',
+                opacity: 1,
+                color: 'rgba(145,92,159,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,82,45,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_RgionCentreValdeLoire_2');
+        map.getPane('pane_RgionCentreValdeLoire_2').style.zIndex = 402;
+        map.getPane('pane_RgionCentreValdeLoire_2').style['mix-blend-mode'] = 'normal';
+        var layer_RgionCentreValdeLoire_2 = new L.geoJson(json_RgionCentreValdeLoire_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RgionCentreValdeLoire_2',
+            layerName: 'layer_RgionCentreValdeLoire_2',
+            pane: 'pane_RgionCentreValdeLoire_2',
+            onEachFeature: pop_RgionCentreValdeLoire_2,
+            style: style_RgionCentreValdeLoire_2_0,
+        });
+        bounds_group.addLayer(layer_RgionCentreValdeLoire_2);
+        map.addLayer(layer_RgionCentreValdeLoire_2);
+        function pop_HorsthmatiqueDSILexceptionnelle_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Thème</th>\
+                        <td>' + (feature.properties['Thème'] !== null ? autolinker.link(feature.properties['Thème'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Projet</th>\
+                        <td>' + (feature.properties['Projet'] !== null ? autolinker.link(feature.properties['Projet'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Coût</th>\
+                        <td>' + (feature.properties['Coût'] !== null ? autolinker.link(feature.properties['Coût'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Subvention</th>\
+                        <td>' + (feature.properties['Subvention'] !== null ? autolinker.link(feature.properties['Subvention'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Part</th>\
+                        <td>' + (feature.properties['Part'] !== null ? autolinker.link(feature.properties['Part'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_HorsthmatiqueDSILexceptionnelle_3_0() {
+            return {
+                pane: 'pane_HorsthmatiqueDSILexceptionnelle_3',
+                radius: 5.6,
+                opacity: 1,
+                color: 'rgba(255,255,16,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,149,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_HorsthmatiqueDSILexceptionnelle_3');
+        map.getPane('pane_HorsthmatiqueDSILexceptionnelle_3').style.zIndex = 403;
+        map.getPane('pane_HorsthmatiqueDSILexceptionnelle_3').style['mix-blend-mode'] = 'normal';
+        var layer_HorsthmatiqueDSILexceptionnelle_3 = new L.geoJson(json_HorsthmatiqueDSILexceptionnelle_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HorsthmatiqueDSILexceptionnelle_3',
+            layerName: 'layer_HorsthmatiqueDSILexceptionnelle_3',
+            pane: 'pane_HorsthmatiqueDSILexceptionnelle_3',
+            onEachFeature: pop_HorsthmatiqueDSILexceptionnelle_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_HorsthmatiqueDSILexceptionnelle_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_HorsthmatiqueDSILexceptionnelle_3);
+        map.addLayer(layer_HorsthmatiqueDSILexceptionnelle_3);
+        function pop_Transitioncologique_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Thème</th>\
+                        <td>' + (feature.properties['Thème'] !== null ? autolinker.link(feature.properties['Thème'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Projet</th>\
+                        <td>' + (feature.properties['Projet'] !== null ? autolinker.link(feature.properties['Projet'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Coût</th>\
+                        <td>' + (feature.properties['Coût'] !== null ? autolinker.link(feature.properties['Coût'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Subvention</th>\
+                        <td>' + (feature.properties['Subvention'] !== null ? autolinker.link(feature.properties['Subvention'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Part</th>\
+                        <td>' + (feature.properties['Part'] !== null ? autolinker.link(feature.properties['Part'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Transitioncologique_4_0() {
+            return {
+                pane: 'pane_Transitioncologique_4',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(99,212,84,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Transitioncologique_4');
+        map.getPane('pane_Transitioncologique_4').style.zIndex = 404;
+        map.getPane('pane_Transitioncologique_4').style['mix-blend-mode'] = 'normal';
+        var layer_Transitioncologique_4 = new L.geoJson(json_Transitioncologique_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Transitioncologique_4',
+            layerName: 'layer_Transitioncologique_4',
+            pane: 'pane_Transitioncologique_4',
+            onEachFeature: pop_Transitioncologique_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Transitioncologique_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Transitioncologique_4);
+        map.addLayer(layer_Transitioncologique_4);
+        function pop_Prservationdupatrimoine_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Thème</th>\
+                        <td>' + (feature.properties['Thème'] !== null ? autolinker.link(feature.properties['Thème'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Projet</th>\
+                        <td>' + (feature.properties['Projet'] !== null ? autolinker.link(feature.properties['Projet'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Coût</th>\
+                        <td>' + (feature.properties['Coût'] !== null ? autolinker.link(feature.properties['Coût'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Subvention</th>\
+                        <td>' + (feature.properties['Subvention'] !== null ? autolinker.link(feature.properties['Subvention'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Part</th>\
+                        <td>' + (feature.properties['Part'] !== null ? autolinker.link(feature.properties['Part'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Prservationdupatrimoine_5_0() {
+            return {
+                pane: 'pane_Prservationdupatrimoine_5',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(255,166,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,200,98,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Prservationdupatrimoine_5');
+        map.getPane('pane_Prservationdupatrimoine_5').style.zIndex = 405;
+        map.getPane('pane_Prservationdupatrimoine_5').style['mix-blend-mode'] = 'normal';
+        var layer_Prservationdupatrimoine_5 = new L.geoJson(json_Prservationdupatrimoine_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Prservationdupatrimoine_5',
+            layerName: 'layer_Prservationdupatrimoine_5',
+            pane: 'pane_Prservationdupatrimoine_5',
+            onEachFeature: pop_Prservationdupatrimoine_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Prservationdupatrimoine_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Prservationdupatrimoine_5);
+        map.addLayer(layer_Prservationdupatrimoine_5);
+        function pop_Rsiliencesanitaire_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Nom</th>\
+                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Thème</th>\
+                        <td>' + (feature.properties['Thème'] !== null ? autolinker.link(feature.properties['Thème'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Projet</th>\
+                        <td>' + (feature.properties['Projet'] !== null ? autolinker.link(feature.properties['Projet'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Coût</th>\
+                        <td>' + (feature.properties['Coût'] !== null ? autolinker.link(feature.properties['Coût'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Subvention</th>\
+                        <td>' + (feature.properties['Subvention'] !== null ? autolinker.link(feature.properties['Subvention'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Part</th>\
+                        <td>' + (feature.properties['Part'] !== null ? autolinker.link(feature.properties['Part'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Rsiliencesanitaire_6_0() {
+            return {
+                pane: 'pane_Rsiliencesanitaire_6',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(93,204,207,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(181,242,244,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Rsiliencesanitaire_6');
+        map.getPane('pane_Rsiliencesanitaire_6').style.zIndex = 406;
+        map.getPane('pane_Rsiliencesanitaire_6').style['mix-blend-mode'] = 'normal';
+        var layer_Rsiliencesanitaire_6 = new L.geoJson(json_Rsiliencesanitaire_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Rsiliencesanitaire_6',
+            layerName: 'layer_Rsiliencesanitaire_6',
+            pane: 'pane_Rsiliencesanitaire_6',
+            onEachFeature: pop_Rsiliencesanitaire_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Rsiliencesanitaire_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Rsiliencesanitaire_6);
+        map.addLayer(layer_Rsiliencesanitaire_6);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/Rsiliencesanitaire_6.png" /> Résilience sanitaire': layer_Rsiliencesanitaire_6,'<img src="legend/Prservationdupatrimoine_5.png" /> Préservation du patrimoine': layer_Prservationdupatrimoine_5,'<img src="legend/Transitioncologique_4.png" /> Transition écologique': layer_Transitioncologique_4,'<img src="legend/HorsthmatiqueDSILexceptionnelle_3.png" /> Hors thématique DSIL exceptionnelle': layer_HorsthmatiqueDSILexceptionnelle_3,'<img src="legend/RgionCentreValdeLoire_2.png" /> Région Centre Val de Loire': layer_RgionCentreValdeLoire_2,'<img src="legend/DpartementsCnetreValdeLoire_1.png" /> Départements Cnetre Val de Loire': layer_DpartementsCnetreValdeLoire_1,"Fond de carte OSM": layer_FonddecarteOSM_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
